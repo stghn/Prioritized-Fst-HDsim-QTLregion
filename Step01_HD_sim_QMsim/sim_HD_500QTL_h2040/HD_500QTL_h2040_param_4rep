@@ -1,0 +1,514 @@
+/*******************************
+**	Global parameters	**
+*******************************/ 
+title = "600k SNPs|500 QTLs|29 Chr|h2=0.4";
+seed = "HD_500QTL_h2040_param_4rep.seed"; 
+nrep = 4;
+h2  = 0.4;
+qtlh2 = 0.4;
+phvar = 1; 
+
+/*******************************
+**  Historical population  **
+*******************************/ 
+begin_hp;
+hg_size = 5000[0] 400[1000] 50000[1300];	//Size of the historical generations
+end_hp;
+
+/*******************************
+**	Populations	**
+*******************************/ 
+begin_pop = "p1";
+begin_founder;
+male [n = 100, pop = "hp"]; 
+female [n = 15000, pop = "hp"];
+end_founder; 
+ls = 1;
+md = rnd; 
+sd = ebv ; 
+pmp = 0.5;
+sr = 0.5;
+dr = 0.3;
+ng = 10;
+ebv_est = blup /true_av; 
+begin_popoutput;
+ld /gen 0 10; 
+data; 
+stat;
+genotype /snp_code /gen 9 10; 
+allele_freq;
+end_popoutput; 
+end_pop;
+ 
+/*******************************
+**	Genome	**
+*******************************/ 
+begin_genome;
+begin_chr = 1;  // CHR 1
+chrlen = 146;
+nmloci = 39453; 
+mpos = even; 
+nma  = all 2; 
+maf  = eql; 
+nqloci = 41; 
+qpos = rnd; 
+nqa  = all 2; 
+qaf  = eql;
+qae  = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 2
+chrlen = 125;
+nmloci = 35568; 
+mpos = even; 
+nma  = all 2; 
+maf  = eql;
+nqloci = 37; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 3
+chrlen = 116;
+nmloci = 31578; 
+mpos = even; 
+nma  = all 2; 
+maf  = eql; 
+nqloci = 35; 
+qpos = rnd; 
+nqa  = all 2; 
+qaf  = eql;
+qae  = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 4
+chrlen = 110;
+nmloci = 29968;
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 34; 
+qpos = rnd; 
+nqa  = all 2; 
+qaf  = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 5
+chrlen = 118;
+nmloci = 29430; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 35; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+
+//
+ 
+begin_chr = 1; // CHR 6
+chrlen = 111;
+nmloci = 31873; 
+mpos = even; 
+nma  = all 2; 
+maf  = eql; 
+nqloci = 34; 
+qpos = rnd;
+nqa  = all 2; 
+qaf  = eql;
+qae  = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 7
+chrlen = 100;
+nmloci = 28739; 
+mpos = even; 
+nma  = all 2; 
+maf  = eql; 
+nqloci = 32; 
+qpos = rnd; 
+nqa  = all 2; 
+qaf  = eql;
+qae  = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 8
+chrlen = 103;
+nmloci = 23267; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 32; 
+qpos = rnd; 
+nqa  = all 2; 
+qaf  = eql;
+qae  = rndn;
+cld    = mq; 
+end_chr;
+//
+
+begin_chr = 1; // CHR 9
+chrlen = 95;
+nmloci = 28333; 
+mpos = even; 
+nma  = all 2; 
+maf  = eql; 
+nqloci = 30;
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 10
+chrlen = 95;
+nmloci = 27568; 
+mpos = even; 
+nma  = all 2; 
+maf  = eql; 
+nqloci = 30; 
+qpos = rnd; 
+nqa  = all 2; 
+qaf  = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 11
+chrlen = 101;
+nmloci = 29357; 
+mpos  = even;
+nma = all 2; 
+maf = eql; 
+nqloci = 32; 
+qpos = rnd; 
+nqa  = all 2; 
+qaf  = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 12
+chrlen = 77;
+nmloci = 24031; 
+mpos = even; 
+nma = all 2; 
+maf = eql;
+nqloci = 27; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 13
+chrlen = 83;
+nmloci = 18816; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 28; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 14
+chrlen = 82;
+nmloci = 19442; 
+mpos = even; 
+nma  = all 2; 
+maf  = eql; 
+nqloci = 28; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq;
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 15
+chrlen = 75;
+nmloci = 22461; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 26; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq;
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 16
+chrlen = 72;
+nmloci = 21706; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 26; 
+qpos = rnd;
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 17
+chrlen = 70;
+nmloci = 19662; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 25; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+//
+
+begin_chr = 1; // CHR 18
+chrlen = 62;
+nmloci = 19586; 
+mpos = even; 
+nma = all 2;
+maf = eql; 
+nqloci = 23; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+//
+
+begin_chr = 1; // CHR 19
+chrlen = 63;
+nmloci = 18152;
+mpos = even; 
+nma  = all 2; 
+maf  = eql; 
+nqloci = 24; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+//
+
+begin_chr = 1; // CHR 20
+chrlen = 68;
+nmloci = 19709; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 25; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+
+//
+
+begin_chr = 1; // CHR 21
+chrlen = 63;
+nmloci = 18896; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 24; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+ 
+//
+
+begin_chr = 1; // CHR 22
+chrlen = 59;
+nmloci = 17533; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 23; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+//
+
+begin_chr = 1; // CHR 23
+chrlen = 48;
+nmloci = 14567; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 20; 
+qpos = rnd; 
+nqa  = all 2;
+qaf  = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+//
+
+begin_chr = 1; // CHR 24
+chrlen = 60;
+nmloci = 16947; 
+mpos = even; 
+nma  = all 2; 
+maf  = eql; 
+nqloci = 23; 
+qpos = rnd; 
+nqa  = all 2; 
+qaf  = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+//
+
+begin_chr = 1; // CHR 25
+chrlen = 42;
+nmloci = 12811; 
+mpos = even; 
+nma = all 2; 
+maf = eql;
+nqloci = 19; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+//
+
+begin_chr = 1; // CHR 26
+chrlen = 47;
+nmloci = 14623; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 20; 
+qpos = rnd;
+nqa  = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+//
+
+begin_chr = 1; // CHR 27
+chrlen = 43;
+nmloci = 13145;
+mpos = even; 
+nma = all 2;
+maf = eql; 
+nqloci = 19; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn;
+cld    = mq; 
+end_chr;
+//
+
+begin_chr = 1; // CHR 28
+chrlen = 40;
+nmloci = 12855; 
+mpos = even; 
+nma  = all 2; 
+maf  = eql; 
+nqloci = 19; 
+qpos = rnd; 
+nqa = all 2; 
+qaf = eql;
+qae = rndn; 
+cld    = mq;
+end_chr;
+//
+ 
+begin_chr = 1; // CHR 29
+chrlen = 45;
+nmloci = 14069; 
+mpos = even; 
+nma = all 2; 
+maf = eql; 
+nqloci = 19; 
+qpos = rnd; 
+nqa  = all 2; 
+qaf  = eql;
+qae = rndn; 
+cld = mq;
+end_chr;
+
+
+mmutr = 2.5e-5 /recurrent; 
+qmutr = 2.5e-5 /recurrent; 
+select_seg_loci /maft 0.05 /nmrk 600000  /nqtl 500;
+end_genome;
+
+
+/*******************************
+**	Output options	**
+*******************************/ 
+begin_output;
+linkage_map; 
+allele_effect; 
+hp_stat;
+ 
+end_output;
+

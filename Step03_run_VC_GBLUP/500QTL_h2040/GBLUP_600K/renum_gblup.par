@@ -1,0 +1,36 @@
+# Parameter file for program renf90
+DATAFILE
+data.gen910 
+TRAITS
+4
+FIELDS_PASSED TO OUTPUT
+
+WEIGHT(S)
+
+RESIDUAL_VARIANCE
+0.6
+EFFECT
+2 cross alpha #first fixed effect
+EFFECT
+3 cross alpha #second fixed effect
+EFFECT
+1 cross alpha # animal id
+RANDOM
+animal
+FILE
+fake.ped.GBLUP
+FILE_POS
+1 2 3 0 0
+SNP_FILE
+SNP.GBLUP
+PED_DEPTH
+1
+(CO)VARIANCES
+0.4
+OPTION AlphaBeta 0.999 0.001
+OPTION tunedG 0
+OPTION use_yams
+OPTION maxsnp 650000
+#OPTION saveCleanSNPs
+OPTION map_file mapfile
+OPTION minfreq 0.01

@@ -14,7 +14,7 @@ valid="gen10"
 window="200win"
 
 ## create fake pedigree from training and testing population for renum parameter file
-awk '{print $1}' ../data.$train > train.${train}.ID
+awk '{print $3}' ../data.$train > train.${train}.ID
 cat train.${train}.ID ../test.${valid}.ID > ID.animal
 cat ID.animal | sed 's/^/0 /g' > temp1
 cat temp1 | sed 's/^/0 /g' > temp2

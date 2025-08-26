@@ -10,7 +10,7 @@
 # 6. Contact the script author for any issues or questions.
 
 ## create fake pedigree from training and testing population for renum parameter file
-awk '{print $1}' ../data.gen9 > train.gen9.ID
+awk '{print $3}' ../data.gen9 > train.gen9.ID
 cat train.gen9.ID ../test.gen10.ID > ID.animal
 cat ID.animal | sed 's/^/0 /g' > temp1
 cat temp1 | sed 's/^/0 /g' > temp2
